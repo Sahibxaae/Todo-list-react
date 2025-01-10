@@ -1,0 +1,27 @@
+main{
+    position: relative;
+    width: 550px;
+}
+input{
+    box-sizing: border-box;
+    padding: 12px 20px;
+    width: 100%;
+    background: none;
+    border:2px solid #80808067;
+    outline: none;
+    border-radius: 1000px;
+    font-size: 1rem;
+    caret-color: #30bdbd;
+}
+button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height:100%;
+    padding:0 30px;
+    background-color: #30bdbd;
+    color: #fff;
+    outline: none;
+    border: none;
+    border-radius:1000px;
+}

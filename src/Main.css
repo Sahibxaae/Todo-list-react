@@ -1,4 +1,4 @@
-main{
+.input-area{
     position: relative;
     width: 550px;
 }
@@ -13,7 +13,7 @@ input{
     font-size: 1rem;
     caret-color: #30bdbd;
 }
-button{
+.add-btn{
     position: absolute;
     top: 0;
     right: 0;

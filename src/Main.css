@@ -87,10 +87,16 @@ input[type="checkbox"]:checked + label {
     }
     input{
         padding: 18px;
+        padding-right: 100px;
         font-size: 1.3rem;
+        font-weight: 700;
+        
     }
     ol li label{
         padding: 0 15px;
         width: 200px;
+    }
+    ol li{
+        font-weight: 700;
     }
 }

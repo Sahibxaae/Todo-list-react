@@ -1,10 +1,14 @@
+main{
+    box-sizing: border-box;
+}
 .input-area{
     position: relative;
     width: 550px;
 }
 input{
     box-sizing: border-box;
-    padding: 12px 20px;
+    padding: 12px;
+    padding-right: 100px;
     width: 100%;
     background: none;
     border:2px solid #80808067;
@@ -26,18 +30,33 @@ input{
     border-radius:1000px;
 }
 ol{
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 550px;
     gap: 1rem;
     padding: 10px;
 }
 ol li {
     border: #80808067 2px solid;
-    display:flex;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 0.5rem;
-    padding: 20px;
+    padding: 20px 20px;
     border-radius: 10px;
+}
+ol li input[type="checkbox"] {
+    width: 20px; 
+    height: 20px;
+    cursor: pointer; 
+    accent-color: orange; 
+    border-radius: 50%;
+    transition: 3ms;
+}
+ol li label{
+    padding: 0 15px;
+    width: 350px;
 }
 .text {
     flex: 1;
@@ -51,7 +70,27 @@ ol button{
 }
 .delete-btn{
     background-color: #ff0000bc;
+    margin-left: auto;
 }
-.up-btn, .down-btn{
+input[type="checkbox"]:checked + label {
+    text-decoration: line-through; 
+    color: #808080; 
+}
+/* .up-btn, .down-btn{
     background-color: #005fe4;
+} */
+ @media only screen and (max-width: 600px) {
+    .input-area{
+        position: relative;
+        width: 385px;
+        margin: 15px 15px;
+    }
+    input{
+        padding: 18px;
+        font-size: 1.3rem;
+    }
+    ol li label{
+        padding: 0 15px;
+        width: 200px;
+    }
 }

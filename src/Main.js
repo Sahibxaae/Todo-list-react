@@ -2,50 +2,46 @@ import './Main.css'
 import React, {useState} from 'react'
 
 const Main = () => {
-    const [tasks,setTasks] = useState([]);
-    const [task,setTask] = useState("");
+    const [tasks,setTasks] = useState(["Eat","Sleep","work"]);
+    const [newTask,setNewTask] = useState("");
 
-    const addTask = (e) =>{
-        if(task.trim()){
-            setTasks([...tasks,{text:task,completed:false}]);
-            setTask('');
-        }
-        console.log(tasks);
+    const handleInputChange = (event)=>{ //textbox input handling
+      setNewTask(event.target.value);
     }
-    const toggleComplete = (index) =>{
-      const newTasks = tasks.map((t,i)=>
-        i===index?{...t ,completed:!t.completed}:t);
-      setTasks(newTasks);
+
+    const addTask = () =>{
+      setTasks(t=>[...t,newTask]);
+      setNewTask("");
     }
-    const deleteTask = (index)=>{
-      tasks.filter((_,i)=>{
-        setTasks(tasks.filter((_,i) => i !== index));
-      })
+
+    const deleteTask = (index) =>{
+      // tasks.filter((_,i)=>())
+    }
+
+    const moveTaskUp = (index) =>{
+
+    }
+
+    const moveTaskDown = (index) =>{
+
     }
   return ( 
     <main>
       <div className='input-area'>
-        <input type="text" value={task} onChange={(e)=> setTask(e.target.value)} placeholder="Enter a task"/>
-        <button  className="add-btn" onClick={(e)=>addTask(e)}>Add</button>
+        <input type="text" placeholder="Enter a task" value={newTask} onChange={(e)=>handleInputChange(e)}/> 
+        {/* e means event. Here click event is going to happen so we send the parameter to the respective function and we receive through the parameter event and we target the click event value using event.target.value */}
+        <button className="add-btn" onClick={addTask}>Add</button>
       </div>
-        <ul>
-        {tasks.map((t, index) => (
-          <li
-            key={index}
-          >
-            <span
-              onClick={() => toggleComplete(index)}
-            >
-              {t.text}
-            </span>
-            <button
-              onClick={() => deleteTask(index)}
-            >
-              Delete
-            </button>
+      <ol>
+        {tasks.map((task,index)=>(
+          <li key={index}>
+            <span className='text'>{task}</span>
+            <button className='delete-btn'onClick={()=>deleteTask()}>delete</button>
+            <button className='up-btn'>up</button>
+            <button className='down-btn'>down</button>
           </li>
         ))}
-      </ul>
+      </ol>
     </main>
   )
 }

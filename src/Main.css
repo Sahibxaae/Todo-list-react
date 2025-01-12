@@ -11,7 +11,7 @@ input{
     outline: none;
     border-radius: 1000px;
     font-size: 1rem;
-    caret-color: #30bdbd;
+    caret-color: #005fe4;
 }
 .add-btn{
     position: absolute;
@@ -19,9 +19,39 @@ input{
     right: 0;
     height:100%;
     padding:0 30px;
-    background-color: #30bdbd;
+    background-color: #005fe4;
     color: #fff;
     outline: none;
     border: none;
     border-radius:1000px;
+}
+ol{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 10px;
+}
+ol li {
+    border: #80808067 2px solid;
+    display:flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 20px;
+    border-radius: 10px;
+}
+.text {
+    flex: 1;
+}
+ol button{
+    padding: 10px 20px;
+    border:none;
+    outline: none;
+    border-radius: 20px;
+    color: #fff;
+}
+.delete-btn{
+    background-color: #ff0000bc;
+}
+.up-btn, .down-btn{
+    background-color: #005fe4;
 }
